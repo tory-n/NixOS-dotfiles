@@ -49,7 +49,18 @@
         ./modules/music.nix
         ./modules/common.nix 
       ];
+      nixosConfigurations.user = nixpkgs.lib.nixosSystem {
+    
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       
+      modules = [
+        inputs.home-manager.nixosModules.home-manager 
+        ./hosts/template/example.nix
+        ./modules/hyprland.nix
+        ./modules/music.nix
+        ./modules/common.nix 
+      ];
     };
   };
 }
