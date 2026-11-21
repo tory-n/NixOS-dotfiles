@@ -97,4 +97,31 @@ imports = [
     dates = "daily";
     options = "--delete-older-than 7d";
   };
+# ── utilities and packages  ─────────────────────────────────────────────
+  environment.systemPackages = with pkgs; [
+    # utility
+    networkmanagerapplet
+    brightnessctl
+    wl-clipboard
+    kitty
+    fastfetch
+    git
+    gh
+    jq
+    nemo
+    thunar
+    nautilus
+    localsend
+    pavucontrol
+    vlc
+    obs-studio
+    shotcut
+    bitwarden-desktop
+    polkit_gnome
+    (pkgs.python3.withPackages (ps: [
+      ps.sympy
+    ]))
+    unzip
+    onlyoffice-desktopeditors
+  ];
 }

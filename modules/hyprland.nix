@@ -29,33 +29,9 @@
   };
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
-    # utility
-    networkmanagerapplet
-    brightnessctl
-    wl-clipboard
-    kitty
-    git
-    jq
-    nemo
-    thunar
-    nautilus
-    localsend
-    pavucontrol
-    vlc
-    obs-studio
-    shotcut
-    bitwarden-desktop
-    polkit_gnome
-    (pkgs.python3.withPackages (ps: [
-      ps.sympy
-    ]))
-    unzip
-    git
-
 
     # cool
     inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
-    fastfetch
     cmatrix
     cbonsai
     pipes
@@ -63,17 +39,18 @@
     # screenshot
     grim
     slurp
+    
     # launcher / shell
     vicinae
     fuzzel
     waybar
     nwg-dock-hyprland
     nwg-drawer
-
+    
     # hyprland (hypridle via services.hypridle, portal via programs.hyprland)
     hyprpaper
     hyprlock
-
+    
     # user apps
     nicotine-plus
     kew
