@@ -1,0 +1,46 @@
+/* Rosé Pine palette as GTK named colors.
+   Use them in CSS as @name (e.g. color: @peach;). */
+@define-color rosewater  #ebbcba;
+@define-color flamingo   #ebbcba;
+@define-color pink       #eb6f92;
+@define-color mauve      #c4a7e7;
+@define-color red        #eb6f92;
+@define-color maroon     #b4637a;
+@define-color peach      #ea9a97;
+@define-color yellow     #f6c177;
+@define-color green      #31748f;
+@define-color teal       #9ccfd8;
+@define-color sky        #9ccfd8;
+@define-color sapphire   #3e8fb0;
+@define-color blue       #31748f;
+@define-color lavender   #c4a7e7;
+@define-color text       #e0def4;
+@define-color subtext1   #908caa;
+@define-color subtext0   #6e6a86;
+@define-color overlay2   #6e6a86;
+@define-color overlay1   #524f67;
+@define-color overlay0   #403d52;
+@define-color surface2   #403d52;
+@define-color surface1   #26233a;
+@define-color surface0   #1f1d2e;
+@define-color base       alpha(#191724, 0.8);
+@define-color mantle     alpha(#14111f, 0.4);
+@define-color crust      #110f1c;
+
+/* Semantic aliases carried over from the Polybar [colors] section */
+@define-color background        @base;
+@define-color window-background @base;
+@define-color background-alt    @base;
+@define-color border-color      @mantle;
+@define-color foreground        @text;
+@define-color primary           @text;
+@define-color secondary         @subtext1;
+@define-color alert             @red;
+@define-color disabled          @overlay2;
+@define-color aurora-blue       @blue;
+@define-color aurora-orange     @peach;
+@define-color aurora-yellow     @yellow;
+@define-color aurora-green      @teal;
+@define-color aurora-violet     @lavender;
+@define-color purple            @lavender;
+@define-color nord-background   @surface0;

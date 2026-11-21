@@ -1,0 +1,37 @@
+// ~/.config/waybar/config.jsonc
+// Two bars, like the Polybar setup: "main" on every monitor except DP-3,
+// "secondary" on DP-3. Check your names with `hyprctl monitors`.
+[
+  {
+    "name": "main",
+    "layer": "top",
+    "position": "top",
+    "height": 27,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "output": ["eDP-1"],
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "modules-left": ["hyprland/workspaces", "custom/cava", "pulseaudio"],
+    "modules-center": ["clock", "mpris", "hyprland/window", "backlight"],
+    "modules-right": [
+      "memory", "cpu", "network", "disk", "tray",
+      "hyprland/language", "battery", "custom/power"
+    ]
+  },
+  {
+    "name": "secondary",
+    "layer": "top",
+    "position": "top",
+    "height": 27,
+    "output": ["DP-3"],
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock", "mpris", "hyprland/window", "backlight"],
+    "modules-right": ["memory", "cpu", "battery"]
+  }
+]
+[2026-10-20 17:20:05.790] [info] Including resource file: ~/.config/waybar/modules.jsonc
+[2026-10-20 17:20:05.790] [info] In

@@ -1,0 +1,46 @@
+/* Catppuccin Mocha palette as GTK named colors.
+   Use them in CSS as @name (e.g. color: @peach;). */
+@define-color rosewater  #d3869b;
+@define-color flamingo   #d3869b;
+@define-color pink       #d3869b;
+@define-color mauve      #d3869b;
+@define-color red        #cc241d;
+@define-color maroon     #98971a;
+@define-color peach      #fb4934 ;
+@define-color yellow     #fe8019;
+@define-color green      #98971a;
+@define-color teal       #458588;
+@define-color sky        #83a598;
+@define-color sapphire   #8ec07c;
+@define-color blue       #689d6a;
+@define-color lavender   #b16286;
+@define-color text       #ebdbb2;
+@define-color subtext1   #fbf1c7;
+@define-color subtext0   #ebdbb2 ;
+@define-color overlay2   #3c3836;
+@define-color overlay1   #504945;
+@define-color overlay0   #665c54;
+@define-color surface2   #7c6f64;
+@define-color surface1   #504945;
+@define-color surface0   #3c3836;
+@define-color base       alpha(#282828, 0.8);
+@define-color mantle     alpha(#1d2021, 0.4);
+@define-color crust      #928374;
+
+/* Semantic aliases carried over from the Polybar [colors] section */
+@define-color background        @base;
+@define-color window-background @base;
+@define-color background-alt    @base;
+@define-color border-color      @mantle;
+@define-color foreground        @text;
+@define-color primary           @text;
+@define-color secondary         @subtext1;
+@define-color alert             @red;
+@define-color disabled          @surface2;
+@define-color aurora-blue       @blue;
+@define-color aurora-orange     @peach;
+@define-color aurora-yellow     @yellow;
+@define-color aurora-green      @teal;
+@define-color aurora-violet     @lavender;
+@define-color purple            @lavender;
+@define-color nord-background   @surface0;

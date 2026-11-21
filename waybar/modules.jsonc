@@ -1,0 +1,111 @@
+// ~/.config/waybar/modules.jsonc  (shared by both bars)
+{
+  "custom/menu": {
+    "format": "Menu",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": { "*": 5 }
+  },
+
+  // Your Polybar cava script already streams lines to stdout, so it should work as-is.
+  // Copy it into ~/.config/waybar/scripts/.
+  // Polybar %{F...} markup won't render here; use Pango <span> if the script uses it.
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{volume}%",
+    "format-muted": "x Mute",
+    "on-click-right": "pavucontrol",
+    "tooltip": false
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "󱑂 {:%I:%M %p}",
+    // click toggles the long format (same as Polybar's date-alt)
+    "format-alt": "<span color='#FF9535'>{:%Y-%m-%d %I:%M:%S %p}</span>",
+    "tooltip": false
+  },
+
+  // Built-in replacement for player.sh
+  "mpris": {
+    "format": "{artist} - {title}",
+    "format-paused": "{artist} - {title}",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": false
+  },
+
+  "hyprland/window": {
+    "format": "{class}",
+    "max-length": 20,
+    "separate-outputs": true
+  },
+
+  // Note: scroll directions kept from your Polybar config (up = darker, down = brighter).
+  // Swap them if that was unintentional.
+  "backlight": {
+    "format": "{percent}%",
+    "on-scroll-up": "brightnessctl set 5%- -q",
+    "on-scroll-down": "brightnessctl set +5% -q",
+    "tooltip": false
+  },
+
+  "memory": {
+    "interval": 2,
+    "format": "RAM: {percentage}%"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "CPU: {usage}%"
+  },
+
+  "network": {
+    "interface": "wl*",
+    "interval": 5,
+    "format-wifi": "<span color='#F0C674'>{ifname}</span> 󰖩",
+    "format-ethernet": "<span color='#F0C674'>{ifname}</span> 󰈀",
+    "format-disconnected": "<span color='#F0C674'>{ifname}</span> <span color='#707880'>disconnected</span>",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+  },
+
+  "disk": {
+    "interval": 25,
+    "path": "/",
+    "format": "<span color='#F0C674'>/</span> {percentage_used}%"
+  },
+
+  "tray": {
+    "icon-size": 17,
+    "spacing": 8
+  },
+
+  "hyprland/language": {
+    "format": "{short}"
+  },
+
+  "battery": {
+    "full-at": 99,
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+    "format-charging": "󰂄 {capacity}%",
+    "format-full": "󰁹 {capacity}%"
+  },
+
+  "custom/power": {
+    "format": "⭘",
+    "on-click": "vicinae vicinae://launch/power",
+    "tooltip": false
+  }
+}

@@ -1,0 +1,73 @@
+/* ~/.config/waybar/style.css */
+@import "colors.css";
+
+* {
+  font-family: "LINE Seed JP", "GoogleSansCode NF", monospace;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @window-background;
+  color: @foreground;
+  border: 3px solid @border-color;
+  border-radius: 10px;
+  margin-top: 10000px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-right: 10px;
+}
+
+#custom-menu, #custom-cava, #pulseaudio, #clock, #mpris, #window,
+#backlight, #memory, #cpu, #network, #disk, #tray, #language,
+#battery, #custom-power {
+  padding: 0 8px;
+}
+
+/* Menu button */
+#custom-menu {
+  background: @background-alt;
+  padding: 0 16px;
+}
+
+/* Workspaces (bspwm module equivalent) */
+#workspaces button {
+  padding: 0 8px;
+  color: @foreground;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+#workspaces button.empty   { color: @disabled; }
+#workspaces button.active  { background: @background-alt; border-bottom: 3px solid @primary; }
+#workspaces button.urgent  { background: @alert; }
+
+#custom-cava { color: @purple; }
+
+#pulseaudio       { color: @foreground; }
+#pulseaudio.muted { color: @disabled; }
+
+#clock     { color: @teal; }
+#mpris     { color: @aurora-blue; }
+#window    { padding: 0 5px; }
+#backlight { color: @aurora-green; }
+
+#memory { color: @teal; }
+#cpu    { color: @green; }
+
+#tray     { margin: 0 5px; }
+#language { color: @primary; }
+
+#battery.charging    { color: @yellow; }
+#battery.discharging { color: @foreground; }
+#battery.full        { color: @green; }
+#battery.critical:not(.charging) { color: @alert; }
+
+#custom-power {
+  background: @aurora-blue;
+  color: @text;
+  padding: 0 12px;
+}
