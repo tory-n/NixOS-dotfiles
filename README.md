@@ -79,7 +79,6 @@ if you really like what I did and want to copy what I have done, which I advise 
     options = "caps:super";
   };
 
-
   # ── Fingerprint ─────────────────────────────────────────────────────
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = false;
