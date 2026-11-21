@@ -9,6 +9,7 @@ At the time of writing, the rose-pine theme was in use, but I expect to change i
 
 # Showcase
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2686426-5776-43f2-93c1-97b45bd159cc" />
+
 ## Install Script
 Run the following commands to install the template configuration on your device with all modules enabled.
 
