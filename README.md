@@ -11,7 +11,7 @@ At the time of writing, the rose-pine theme was in use, but I will definitely ch
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2686426-5776-43f2-93c1-97b45bd159cc" />
 
 # Configuration
-if you really like what I did and want to steal (bad idea), clone this repo onto your device and write your own configuration and home.nix for your device.
+if you really like what I did and want to steal (bad idea), clone this repo onto your device and write your own configuration, home.nix and flake.nix.
 
 ## home.nix config
 
