@@ -16,6 +16,9 @@
   xdg.configFile."hypr/conf".source =
     config.lib.file.mkOutOfStoreSymlink "/etc/nixos/hypr/conf";
 
+  home.file."${config.home.homeDirectory}/.config/waybar".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/waybar";
+
   services.hypridle = {
     enable = true;
     settings = {
