@@ -31,6 +31,13 @@
     variant = "";
     options = "caps:super";
   };
+  
+# ── user account ───────────────────────────────────────────────────
+  users.users.user = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    initialPassword = "changeme";  # change after first login with `passwd`
+  };
 
   # ── home management ────────────────────────────────────────────────
   home-manager = {

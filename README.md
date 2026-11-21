@@ -168,4 +168,10 @@ nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
 ```
 
 ## Install Script
+Run the following commands to install the template configuration on your device with all modules enabled.
 
+```
+git clone https://github.com/tory-n/NixOS-dotfiles
+cd NixOS-dotfiles
+bash install.sh
+```

@@ -3,7 +3,15 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  
+  users.users.toryn = {
+    isNormalUser = true;
+    description = "toryn";
+    shell = pkgs.fish;
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "audio" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
+  };
 # ── Networking ──────────────────────────────────────────────────────
   networking.hostName = "tori-1";
   networking.networkmanager.enable = true;

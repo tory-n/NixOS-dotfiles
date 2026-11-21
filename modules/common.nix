@@ -26,15 +26,7 @@ imports = [
   };
   environment.sessionVariables.XMODIFIERS = "@im=fcitx";
 # ── User ────────────────────────────────────────────────────────────
-  users.users.toryn = {
-    isNormalUser = true;
-    description = "toryn";
-    shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "audio" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
-  };
+  
   services.flatpak.enable = true;
   programs.fish.enable = true;
   services.desktopManager.plasma6.enable = true;
