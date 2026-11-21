@@ -99,29 +99,28 @@ imports = [
   };
 # ── utilities and packages  ─────────────────────────────────────────────
   environment.systemPackages = with pkgs; [
-    # utility
-    networkmanagerapplet
-    brightnessctl
-    wl-clipboard
-    kitty
-    fastfetch
-    git
-    gh
-    jq
-    nemo
-    thunar
-    nautilus
-    localsend
-    pavucontrol
-    vlc
-    obs-studio
-    shotcut
     bitwarden-desktop
+    brightnessctl
+    fastfetch
+    gh
+    git
+    jq
+    kitty
+    localsend
+    nautilus
+    nemo
+    networkmanagerapplet
+    obs-studio
+    onlyoffice-desktopeditors
+    pavucontrol
     polkit_gnome
+    shotcut
+    thunar
+    unzip
+    vlc
+    wl-clipboard
     (pkgs.python3.withPackages (ps: [
       ps.sympy
     ]))
-    unzip
-    onlyoffice-desktopeditors
   ];
 }

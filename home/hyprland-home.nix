@@ -27,11 +27,13 @@
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
+      
       listener = [
         {
           timeout = 90;
           on-timeout = "loginctl lock-session";
         }
+        
         {
           timeout = 330;
           on-timeout = "hyprctl dispatch dpms off";
@@ -64,6 +66,7 @@
       "urgency=low" = {
         border-color = "#908caa";
       };
+      
       "urgency=high" = {
         border-color = "#ebbcba";
         text-color = "#e0def4";

@@ -7,12 +7,7 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
-      animate = true;
-      animation = "dur_file";
-      dur_file_path = "${./rain.dur}";
-      full_color = true;
-      dur_x_offset = 0;
-      dur_y_offset = 0;
+      animate = false;
     };
   };
   programs.dconf.enable = true;

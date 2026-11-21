@@ -6,7 +6,6 @@
     ../../home/gtk-home.nix
   ];
 
-
   home.username = "toryn";
   home.homeDirectory = "/home/toryn";
   home.stateVersion = "26.05";

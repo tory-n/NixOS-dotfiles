@@ -3,14 +3,15 @@
   imports = [
     ./hardware-configuration.nix
   ];
+  
 # ── Networking ──────────────────────────────────────────────────────
   networking.hostName = "tori-1";
   networking.networkmanager.enable = true;
   
-
 # ── Boot ────────────────────────────────────────────────────────────
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
 # ── Hardware ────────────────────────────────────────────────────────
   hardware.enableRedistributableFirmware = true;
 
@@ -31,7 +32,6 @@
     options = "caps:super";
   };
 
-
   # ── Fingerprint ─────────────────────────────────────────────────────
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = false;
@@ -48,6 +48,7 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
       }
     });
   '';
+  
   # ── home management ────────────────────────────────────────────────
   home-manager = {
             backupFileExtension = "backup";
@@ -56,6 +57,7 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
             extraSpecialArgs = { inherit inputs; };
             users.toryn = import ./home.nix;
           };
+
   # ── Power management ────────────────────────────────────────────────
   services.power-profiles-daemon.enable = false;
   services.tlp = {

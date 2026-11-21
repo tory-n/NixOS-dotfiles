@@ -5,13 +5,13 @@ Per device configurations are under hosts. I currently only have configured one 
 
 Hyprland and waybar configurations are included. Install your own wallpaper and configure Hyprpaper or your wallpaper manager of choice.
 
-At the time of writing, the rose-pine theme was in use, but I will definitely change it and forgot to update.
+At the time of writing, the rose-pine theme was in use, but I expect to change it and forget to update.
 
 # Showcase
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2686426-5776-43f2-93c1-97b45bd159cc" />
 
 # Configuration
-if you really like what I did and want to steal (bad idea), clone this repo onto your device and write your own configuration, home.nix and flake.nix.
+if you really like what I did and want to copy what I have done, which I advise against, clone this repo onto your device and write your own device configuration, home manager file and flake module.
 
 ## home.nix config
 
@@ -25,7 +25,6 @@ if you really like what I did and want to steal (bad idea), clone this repo onto
     # these are the only two available currently
   ];
 
-
   home.username = "your-username";
   home.homeDirectory = "/home/your-username";
   home.stateVersion = "write whatever is correct";
@@ -33,8 +32,8 @@ if you really like what I did and want to steal (bad idea), clone this repo onto
   home.packages = [
     pkgs.ripgrep
   ];
+  
   # this allows me to edit my config from within obsidian. you need the obsidian plugin Onyx or similar to make this work.
-
   home.file."Documents/Obsidian Vault/source".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config";
 
@@ -49,7 +48,9 @@ if you really like what I did and want to steal (bad idea), clone this repo onto
 {
   imports = [
     ./hardware-configuration.nix
+    # should be auto-generated, move to the same folder as this.
   ];
+  
 # ── Networking ──────────────────────────────────────────────────────
   networking.hostName = "your-username";
   networking.networkmanager.enable = true;
@@ -57,6 +58,7 @@ if you really like what I did and want to steal (bad idea), clone this repo onto
 # ── Boot ────────────────────────────────────────────────────────────
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
 # ── Hardware ────────────────────────────────────────────────────────
   hardware.enableRedistributableFirmware = true;
 
@@ -94,7 +96,9 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
       }
     });
   '';
+  
   # ── home management ────────────────────────────────────────────────
+  # This is what manages everything in the home folder (of the repo, not your device), and also your device config files for hyprland. 
   home-manager = {
             backupFileExtension = "backup";
             useGlobalPkgs = true;
@@ -102,8 +106,9 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
             extraSpecialArgs = { inherit inputs; };
             users.toryn = import ./home.nix;
           };
+          
   # ── Power management ────────────────────────────────────────────────
-  # Power management because of my degraded laptop battery
+  # I configured very aggressive power management because of my degraded laptop battery and to prevent overheating. 
   services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
@@ -133,6 +138,7 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
     HandleLidSwitchDocked        = "lock";
     HandlePowerKey               = "ignore";
   };
+  
   # Do NOT change this after the initial install.
   system.stateVersion = "26.05";
 }
@@ -146,10 +152,13 @@ nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
       modules = [
         inputs.home-manager.nixosModules.home-manager 
         ./hosts/your-own-path/your-file.nix
-# you need this if you want my DE
+        
+# You have to configure your own DE if you don't want to use hyprland. Remember to include a display manager as SDDM is disabled by default.
         ./modules/hyprland.nix
+        
 # if you want to do music production you need this
         ./modules/music.nix
+        
 # most utilities and basic apps are installed here.
 # keep in mind that my idea of utilities is things i myself use (duh)
         ./modules/common.nix
