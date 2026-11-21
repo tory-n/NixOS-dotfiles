@@ -152,7 +152,8 @@ nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
         inputs.home-manager.nixosModules.home-manager 
         ./hosts/your-own-path/your-file.nix
         
-# You have to configure your own DE if you don't want to use hyprland. Remember to include a display manager as SDDM is disabled by default.
+# You have to configure your own DE if you don't want to use hyprland. 
+# Remember to include a display manager as SDDM is disabled by default.
         ./modules/hyprland.nix
         
 # if you want to do music production you need this
