@@ -37,6 +37,7 @@
   };
   outputs = inputs@{ self, nixpkgs, home-manager, musnix,  septabee-nix, owly, ... }: {
     # this block is for my only nixOS device
+    
     nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
     
       system = "x86_64-linux";
@@ -49,7 +50,9 @@
         ./modules/music.nix
         ./modules/common.nix 
       ];
-      nixosConfigurations.user = nixpkgs.lib.nixosSystem {
+    };
+    
+    nixosConfigurations.user = nixpkgs.lib.nixosSystem {
     
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

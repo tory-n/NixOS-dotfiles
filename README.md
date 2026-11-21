@@ -166,3 +166,6 @@ nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
       ];
     };
 ```
+
+## Install Script
+
