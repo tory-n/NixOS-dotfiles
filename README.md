@@ -150,7 +150,8 @@ nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
         ./modules/hyprland.nix
 # if you want to do music production you need this
         ./modules/music.nix
-# most utilities and basic apps are installed here. 
+# most utilities and basic apps are installed here.
+# keep in mind that my idea of utilities is things i myself use (duh)
         ./modules/common.nix
         
       ];
