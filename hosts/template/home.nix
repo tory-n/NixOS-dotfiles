@@ -15,7 +15,7 @@
   ];
 
   home.file."Documents/Obsidian Vault/source".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotfiles";
 
   # laptop-only (battery alerts)
   services.poweralertd.enable = true;

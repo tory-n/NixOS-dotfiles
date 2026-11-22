@@ -41,8 +41,8 @@ hg.preset("contrasted", {
 
 hg.preset("glass", {
     glass_opacity        = 0.99,
-    blur_strength        = 2.5,
-    blur_iterations      = 2,
+    blur_strength        = 3.5,
+    -- blur_iterations      = 2,
     chromatic_aberration = 0.2,
     fresnel_strength     = 0.1,
     edge_thickness       = 0.02,

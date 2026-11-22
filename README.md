@@ -8,15 +8,23 @@ Hyprland and waybar configurations are included. Install your own wallpaper and 
 At the time of writing, the rose-pine theme was in use, but I expect to change it and forget to update.
 
 # Showcase
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2686426-5776-43f2-93c1-97b45bd159cc" />
+<img src="https://github.com/user-attachments/assets/e2686426-5776-43f2-93c1-97b45bd159cc" />
 
-## Install Script
+## Install
 Run the following commands to install the template configuration on your device with all modules enabled.
 
 ```
 git clone https://github.com/tory-n/NixOS-dotfiles
+
 cd NixOS-dotfiles
-bash install.sh
+cd ./NixOS-dotfiles
+
+cp /etc/nixos/hardware-configuration.nix ./hosts/template/hardware-configuration.nix
+
+# if the above fails
+nixos-generate-config --show-hardware-config > hosts/template/hardware-configuration.nix
+
+sudo nixos-rebuild switch --flake ".#user"
 ```
 
 # Configuration

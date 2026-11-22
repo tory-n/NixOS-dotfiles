@@ -13,11 +13,11 @@
     extraConfig = builtins.readFile ./hyprland.lua;
   };
   # ~/.config/hypr/conf -> /etc/nixos/hypr/conf
-  xdg.configFile."hypr/conf".source =
-    config.lib.file.mkOutOfStoreSymlink "/etc/nixos/hypr/conf";
+  home.file."${config.home.homeDirectory}/.config/hypr/conf".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotfiles/hypr/conf";
 
   home.file."${config.home.homeDirectory}/.config/waybar".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/waybar";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotfiles/waybar";
 
   services.hypridle = {
     enable = true;
