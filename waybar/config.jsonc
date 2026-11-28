@@ -6,18 +6,17 @@
     "name": "main",
     "layer": "top",
     "position": "top",
-    "height": 27,
+    "height": 23,
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
     "output": ["eDP-1"],
     "include": ["~/.config/waybar/modules.jsonc"],
 
-    "modules-left": ["hyprland/workspaces", "pulseaudio"],
-    "modules-center": ["clock", "mpris", "hyprland/window", "backlight"],
+    "modules-left": ["hyprland/workspaces", "pulseaudio", "backlight"],
+    "modules-center": ["clock", "hyprland/window"],
     "modules-right": [
-      "memory", "cpu", "network", "disk", "tray",
-      "hyprland/language", "battery", "custom/power"
+      "memory", "cpu", "disk", "tray", "battery", "custom/power"
     ]
   },
     
@@ -34,5 +33,4 @@
     "modules-right": ["memory", "cpu", "battery"]
   }
 ]
-[2026-10-20 17:20:05.790] [info] Including resource file: ~/.config/waybar/modules.jsonc
-[2026-10-20 17:20:05.790] [info] In
+

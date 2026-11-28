@@ -17,18 +17,20 @@ Run the following commands to install the template configuration on your device 
 git clone https://github.com/tory-n/NixOS-dotfiles
 
 cd NixOS-dotfiles
-cd ./NixOS-dotfiles
-
 cp /etc/nixos/hardware-configuration.nix ./hosts/template/hardware-configuration.nix
-
+git add hosts/template/hardware-configuration.nix
 # if the above fails
 nixos-generate-config --show-hardware-config > hosts/template/hardware-configuration.nix
 
 sudo nixos-rebuild switch --flake ".#user"
 ```
 
+# REMEMBER TO RUN PASSWD ON FIRST LOGIN. 
+
+The default password is "changeme". CHANGE IT.
+
 # Configuration
-if you really like what I did and want to copy what I have done, which I advise against, clone this repo onto your device and write your own device configuration, home manager file and flake module.
+If you really like what I did and want to copy what I have done, which I advise against, clone this repo onto your device and write your own device configuration, home manager file and flake module.
 
 ## home.nix config
 
@@ -52,7 +54,7 @@ if you really like what I did and want to copy what I have done, which I advise 
   
   # this allows me to edit my config from within obsidian. you need the obsidian plugin Onyx or similar to make this work.
   home.file."Documents/Obsidian Vault/source".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotiles";
 
   # laptop-only (battery alerts)
   services.poweralertd.enable = true;

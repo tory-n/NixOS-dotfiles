@@ -2,7 +2,7 @@
 {
   "custom/menu": {
     "format": "Menu",
-    "on-click": "rofi -show drun",
+    "on-click": "vicinae toggle",
     "tooltip": false
   },
 

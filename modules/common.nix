@@ -89,6 +89,7 @@ imports = [
     dates = "daily";
     options = "--delete-older-than 7d";
   };
+  nix.optimise.automatic = true;
 # ── utilities and packages  ─────────────────────────────────────────────
   environment.systemPackages = with pkgs; [
     bitwarden-desktop
@@ -99,15 +100,16 @@ imports = [
     jq
     kitty
     localsend
+    lua-language-server
     nautilus
     nemo
+    neovim
     networkmanagerapplet
+    nixd
     obs-studio
     onlyoffice-desktopeditors
     pavucontrol
-    polkit_gnome
     shotcut
-    thunar
     unzip
     vlc
     wl-clipboard

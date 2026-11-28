@@ -5,4 +5,5 @@ return {
     menu        = "vicinae toggle",
     browser     = "zen-beta",
     mainMod     = "SUPER",
+    hiddenWs    = "special:hidden",
 }

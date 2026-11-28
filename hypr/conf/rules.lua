@@ -37,3 +37,4 @@ hl.window_rule({
 hl.layer_rule({ match = { namespace = "vicinae"  }, blur = true })
 hl.layer_rule({ match = { namespace = "main"     }, blur = true })
 hl.layer_rule({ match = { namespace = "nwg-dock" }, blur = true })
+

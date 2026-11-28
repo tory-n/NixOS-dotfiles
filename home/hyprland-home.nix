@@ -1,6 +1,5 @@
 # Hyprland session: compositor config, idle/lock, notifications.
 { config, pkgs, inputs, ... }:
-
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -9,16 +8,19 @@
     systemd.enable = false;
     plugins = [
       "${inputs.hyprglass.packages.${pkgs.stdenv.hostPlatform.system}.hyprglass-nixpkgs}/lib/libhyprglass.so"
+      (inputs.Hyprspace.packages.${pkgs.stdenv.hostPlatform.system}.Hyprspace.overrideAttrs (old: {
+        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.hyprlang ];
+      }))
     ];
     extraConfig = builtins.readFile ./hyprland.lua;
   };
-  # ~/.config/hypr/conf -> /etc/nixos/hypr/conf
+  
   home.file."${config.home.homeDirectory}/.config/hypr/conf".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotfiles/hypr/conf";
 
   home.file."${config.home.homeDirectory}/.config/waybar".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/NixOS-dotfiles/waybar";
-
+  services.polkit-gnome.enable = true;
   services.hypridle = {
     enable = true;
     settings = {
@@ -33,7 +35,10 @@
           timeout = 90;
           on-timeout = "loginctl lock-session";
         }
-        
+        {
+          timeout = 900;
+          on-timeout = "sh -c 'cat /sys/class/power_supply/ADP1/online | grep -q 0 && systemctl suspend'";
+        }        
         {
           timeout = 330;
           on-timeout = "hyprctl dispatch dpms off";
@@ -75,3 +80,4 @@
     };
   };
 }
+

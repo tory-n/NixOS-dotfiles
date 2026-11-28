@@ -16,7 +16,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    hyprland.url = "github:hyprwm/Hyprland/v0.57.2";
     # experimental music production software
     septabee-nix = {
       url = "github:JuxGD/septabee-nix";
@@ -25,8 +25,16 @@
     # glassy hyprland effect
     hyprglass = {
       url = "github:janquednau/hyprglass/nix-support";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
     };
+
+    # window workspaces
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+
+      # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
+      inputs.hyprland.follows = "hyprland";
+    };    
 
     # airdrop for linux
     owly.url = "github:t4t5/owly";

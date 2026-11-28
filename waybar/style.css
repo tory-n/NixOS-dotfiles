@@ -3,7 +3,7 @@
 
 * {
   font-family: "LINE Seed JP", "GoogleSansCode NF", monospace;
-  font-size: 13px;
+  font-size: 12px;
   border: none;
   border-radius: 5px;
   min-height: 0;
@@ -13,11 +13,10 @@ window#waybar {
   background: @window-background;
   color: @foreground;
   border: 3px solid @border-color;
-  border-radius: 10px;
+  border-radius: 0px;
   margin-top: 10000px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 #custom-menu, #custom-cava, #pulseaudio, #clock, #mpris, #window,

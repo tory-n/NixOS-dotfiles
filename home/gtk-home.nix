@@ -19,7 +19,7 @@
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
-      size = 7;
+      size = 24;
     };
 
     font = {
@@ -36,7 +36,7 @@
     gtk.enable = true;
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
-    size = 7;
+    size = 24;
   };
 
   xdg.configFile = {

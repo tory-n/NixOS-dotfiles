@@ -10,12 +10,15 @@
       animate = false;
     };
   };
-  programs.dconf.enable = true;
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  programs.dconf.enable = true;
   security.pam.services.hyprlock = { };
   xdg.portal = {
     enable = true;
@@ -37,10 +40,7 @@
     
     # launcher / shell
     vicinae
-    fuzzel
     waybar
-    nwg-dock-hyprland
-    nwg-drawer
     
     # hyprland (hypridle via services.hypridle, portal via programs.hyprland)
     hyprpaper
@@ -50,12 +50,15 @@
     nicotine-plus
     kew
     musescore
-    onlyoffice-desktopeditors
     discord
     obsidian
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     spotify
   ];
 
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
  
 }

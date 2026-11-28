@@ -1,4 +1,5 @@
 -- Per-workspace layouts and layout settings.
+local p = require("conf.programs")
 hl.workspace_rule({ workspace = "1", layout = "tiled" })
 hl.workspace_rule({ workspace = "3", layout = "scrolling" })
 hl.workspace_rule({ workspace = "4", layout = "master" })
@@ -18,3 +19,18 @@ hl.config({
         disable_hyprland_logo   = true,
     },
 })
+
+hl.on("window.active", function(w)
+    if not w or not w.workspace then return end
+
+    -- Check if the newly focused window lives in a special workspace
+    if w.workspace.name == p.hiddenWs then
+        local current_ws = hl.get_active_workspace()
+        if current_ws then
+            hl.dispatch(hl.dsp.window.move({
+                workspace = current_ws,
+                window = w
+            }))
+        end
+    end
+end)

@@ -54,3 +54,17 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- hidden workspace
+local hidden_ws = "special:hidden"
+hl.bind(mainMod .. " + M", function()
+    local active = hl.get_active_window()
+    if not active then return end
+
+    hl.dispatch(hl.dsp.window.move({
+        workspace = hidden_ws,
+        window = active,
+        follow = false,
+    }))
+end)
+

@@ -1,0 +1,7 @@
+name = "NixOS dotfiles"
+
+[lsp.nix]
+command = ["nixd"]
+
+[lsp.lua]
+command = ["lua-language-server"]

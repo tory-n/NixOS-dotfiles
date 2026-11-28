@@ -20,7 +20,7 @@ hg.config({
 
 -- Layer surfaces: each call whitelists the namespace and configures it
 hg.layer("waybar", { preset = "subtle", mask_threshold = 0.05 })
-hg.layer("swaync")
+hg.layer("mako")
 hg.layer("quickshell:bezel", { preset = "ui", mask_threshold = 0.3 })
 hg.layer("debug-panel", { exclude = true })
 
