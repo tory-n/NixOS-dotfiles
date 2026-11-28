@@ -35,6 +35,9 @@ The default password is "changeme". CHANGE IT.
 
 ## What I've done
 
+### Rebuilds (Important)
+`nh os switch` is enabled through the nix-helper package. This should work across devices after the first build.
+
 ### Waybar
  Config based on itsfoss' polybar config.
  
@@ -136,7 +139,8 @@ bspwm/sxhkd-like configuration
 | Fun             | cmatrix                                           | N/A             |                                     |
 |                 | cbonsai                                           | N/A             |                                     |
 |                 | pipes.sh                                          | N/A             |                                     |
-N/A
+
+
 
 # Configuration
 Configuration instructions can be found as comments within /hosts/template/ files.

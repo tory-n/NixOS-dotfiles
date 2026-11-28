@@ -89,6 +89,9 @@ security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
       CPU_MAX_PERF_ON_BAT = 60;
     };
   };
+  # performance boosting with compression in ram
+  zramSwap.enable = true;
+
 
   services.logind.settings.Login = {
     HandleLidSwitch              = "suspend"; # on battery

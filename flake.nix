@@ -45,7 +45,7 @@
   };
   outputs = inputs@{ self, nixpkgs, home-manager, musnix,  septabee-nix, owly, ... }: {
     # this block is for my only nixOS device
-    
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
     nixosConfigurations.tori-1 = nixpkgs.lib.nixosSystem {
     
       system = "x86_64-linux";

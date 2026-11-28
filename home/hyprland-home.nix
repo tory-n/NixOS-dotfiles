@@ -8,9 +8,9 @@
     systemd.enable = false;
     plugins = [
       "${inputs.hyprglass.packages.${pkgs.stdenv.hostPlatform.system}.hyprglass-nixpkgs}/lib/libhyprglass.so"
-      (inputs.Hyprspace.packages.${pkgs.stdenv.hostPlatform.system}.Hyprspace.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.hyprlang ];
-      }))
+      #(inputs.Hyprspace.packages.${pkgs.stdenv.hostPlatform.system}.Hyprspace.overrideAttrs (old: {
+      #  buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.hyprlang ];
+      #}))
     ];
     extraConfig = builtins.readFile ./hyprland.lua;
   };

@@ -25,6 +25,8 @@ imports = [
     };
   };
   environment.sessionVariables.XMODIFIERS = "@im=fcitx";
+  services.fwupd.enable = true;
+  services.fstrim.enable = true;
 # ── User ────────────────────────────────────────────────────────────
   
   services.flatpak.enable = true;
@@ -84,12 +86,16 @@ imports = [
   
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
+  programs.nh = {
+    enable = true;
+    flake = "/home/toryn/NixOS-dotfiles";
+    clean = {
+    enable = true;
+    extraArgs = "--keep-since 7d --keep 5";
+    };
   };
   nix.optimise.automatic = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
 # ── utilities and packages  ─────────────────────────────────────────────
   environment.systemPackages = with pkgs; [
     bitwarden-desktop
