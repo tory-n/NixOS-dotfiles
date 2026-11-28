@@ -38,7 +38,8 @@
         {
           timeout = 900;
           on-timeout = "sh -c 'cat /sys/class/power_supply/ADP1/online | grep -q 0 && systemctl suspend'";
-        }        
+        } 
+        # take note that the above is hardware-specific
         {
           timeout = 330;
           on-timeout = "hyprctl dispatch dpms off";

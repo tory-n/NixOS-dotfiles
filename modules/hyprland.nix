@@ -47,7 +47,6 @@
     hyprlock
     
     # user apps
-    nicotine-plus
     kew
     musescore
     discord

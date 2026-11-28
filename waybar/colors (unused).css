@@ -1,4 +1,4 @@
-/* Catppuccin Mocha palette as GTK named colors.
+/* gruvbox palette as GTK named colors.
    Use them in CSS as @name (e.g. color: @peach;). */
 @define-color rosewater  #d3869b;
 @define-color flamingo   #d3869b;

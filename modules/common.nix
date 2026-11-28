@@ -109,6 +109,7 @@ imports = [
     obs-studio
     onlyoffice-desktopeditors
     pavucontrol
+    playerctl
     shotcut
     unzip
     vlc
